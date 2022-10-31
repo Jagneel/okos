@@ -1,0 +1,156 @@
+@import "./fonts.css";
+
+/* Home Page */
+
+.home-page {
+    background-color: black;
+    background-image: url('https://images.unsplash.com/photo-1571866735550-7b1ae3bdb144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5%;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul a {
+    margin: 0 15px;
+    font-size: 23px;
+    color: rgb(212, 212, 212);
+    font-family: 'Cinzel';
+
+}
+
+h1 {
+    font-family: 'Bricks';
+    color: rgb(212, 212, 212);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.home-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 22%;
+}
+
+.home-banner ul {
+    display: flex;
+}
+
+.home-banner ul a {
+    font-family: 'Bricks';
+    font-size: 90px;
+    color: rgb(212, 212, 212);
+    margin: 0 50px;
+}
+
+.home-banner ul a:hover {
+    font-family: 'BricksInvers';
+}
+
+.home-banner p {
+    color: rgb(212, 212, 212);
+    font-size: 30px;
+    font-family: 'Cinzel';
+    margin-top: 10%;
+}
+
+/* Menu */
+
+.menu-page {
+    background-color: black;
+    font-family: 'Cinzel';
+    background-image: url('https://images.unsplash.com/photo-1504981983529-9ed8031ade7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2303&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.starters,
+.dessert {
+    background-color: white;
+    border: double black 5px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+details summary {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+details img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+summary p {
+    margin: 0
+}
+
+summary h3::before {
+    content: 'ko';
+    font-family: 'Runic';
+    margin-right: 10px;
+}
+
+summary h3::after {
+    content: 'ko';
+    font-family: 'Runic';
+    margin-left: 10px;
+
+}
+
+
+.mains {
+    background-color: white;
+    border: double black 5px;
+    width: 60%;
+    padding-bottom: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.mains-menu {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
