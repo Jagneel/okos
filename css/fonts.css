@@ -34,6 +34,13 @@
 }
 
 @font-face {
+    font-family: 'Cinzel';
+    src: url('../assets/fonts/Cinzel-Bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Runic';
     src: url('../assets/fonts/Maeshowe.otf');
     font-weight: 400;

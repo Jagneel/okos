@@ -59,7 +59,7 @@ li {
     margin: 0 50px;
 }
 
-.home-banner ul a:hover {
+.home-banner ul a:hover>span {
     font-family: 'BricksInvers';
 }
 
@@ -73,11 +73,9 @@ li {
 /* Menu */
 
 .menu-page {
-    background-color: black;
+    background-color: rgb(71, 71, 71);
     font-family: 'Cinzel';
-    background-image: url('https://images.unsplash.com/photo-1504981983529-9ed8031ade7f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2303&q=80');
-    background-repeat: no-repeat;
-    background-size: cover;
+
 }
 
 .menu-main {
@@ -150,7 +148,74 @@ summary h3::after {
 
 
 .mains-menu {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     text-align: center;
+}
+
+/* Story */
+.story-body {
+    margin: 0;
+}
+
+.story-banner {
+    background-image: url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
+    object-fit: cover;
+    height: 100vh;
+    padding: 0;
+}
+
+.story-banner h2 {
+    font-family: 'Bricks';
+    color: rgb(212, 212, 212);
+    font-size: 80px;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.story-details {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10% 10%;
+    font-family: 'Cinzel';
+}
+
+.story-details h3,
+.story-details h4 {
+    font-weight: 700;
+}
+
+.story-details aside,
+.story-details aside em {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.story-details aside em::after {
+    content: 'ko';
+    font-family: 'Runic';
+    margin-top: 10px;
+}
+
+.story-details article {
+    width: 40%;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.story-details article h3 {
+    font-size: 40px;
+}
+
+.story-details article p {
+    line-height: 30px;
+}
+
+.press,
+.staff {
+    align-self: flex-start;
+    margin-top: 5%;
 }
