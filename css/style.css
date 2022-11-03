@@ -186,20 +186,52 @@ summary h3 {
     justify-content: center;
     padding-bottom: 40px;
     margin-bottom: 60px;
+    text-align: center;
 }
 
-figure {
+figure,
+figure p {
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: 1s ease;
+    text-align: center;
 }
+
+details[open] figure {
+    animation: sweep-in 0.4s ease-in;
+}
+
+@keyframes sweep-in {
+    0% {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes sweep-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+}
+
 
 details summary {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 details img {
@@ -207,10 +239,11 @@ details img {
     height: 200px;
     object-fit: cover;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 summary p {
-    margin: 0
+    margin: 0;
 }
 
 summary h3::before {
@@ -229,7 +262,7 @@ summary h3::after {
 
 .mains {
     background-color: white;
-    width: 60%;
+    width: 100%;
     padding-bottom: 40px;
     margin-bottom: 60px;
     display: flex;
@@ -237,12 +270,55 @@ summary h3::after {
     align-items: center;
 }
 
-
 .mains-menu {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     text-align: center;
+}
+
+.mains-menu aside {
+    max-width: 215px;
+}
+
+
+@media (max-width: 1010px) {
+    .mains-menu {
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+    }
+
+    .mains-menu aside {
+        margin-bottom: 2em;
+
+    }
+
+    .mains-menu aside::after {
+        content: '';
+        height: 100px;
+    }
+
+    .mains-menu aside::after {
+        content: 'o p';
+        flex-wrap: nowrap;
+        font-family: 'Nymph';
+        color: rgb(204, 162, 85);
+        font-size: 50px;
+    }
+}
+
+.mains-menu details {
+    position: relative;
+}
+
+.mains-menu figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mains-menu figure p {
+    width: 25em;
 }
 
 /* Story */
