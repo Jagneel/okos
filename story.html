@@ -4,25 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Story</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src='./scripts/story.js' defer></script>
 </head>
 <body class="story-body">
     <section class="story-banner">
-    <header>
-        <a href="index.html"><h1 class="logo">Oko's</h1></a>       
-        <nav class="nav">
-            <ul>
-                <li><a href="./book.html">Book</a></li>
-                <li><a href="./foodMenu.html">Menu</a></li>
-                <li><a href="./story.html">Story</a></li>
-                <li><a href="./gallery.html">Gallery</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-            <h2>Story</h2>
-        </section>
+        <header>
+            <a href="index.html"><h1 id="story-logo" class="logo">Oko's</h1></a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="./book.html">Book</a></li>
+                    <li><a href="./foodMenu.html">Menu</a></li>
+                    <li><a href="./story.html">Story</a></li>
+                    <li><a href="./gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+        </header>
+    <h2 id="banner-heading" class='show'>Story</h2>
+    <h2 id="arrow" class="show">P</h2>
+    </section>
+    <main class="story-main">
         <section class="story-details">
             <aside class="staff">
                 <h4>Lead Staff</h4>
@@ -52,6 +54,28 @@
                 <em>Review</em>
             </aside>
         </section>
+        <a href="./book.html">
+            <button class="cta">Dine with us</button>
+        </a>
     </main>
+    <footer>
+        <aside class="contact">
+            <h3>Contact</h3>
+            <p>206-555-9890</p>
+            <p>123 Fake Street</p>
+            <p>Brixon, London</p>
+            <p>example@oko.com</p>
+        </aside>
+        <section id="footer-logo">
+            <h1>Oko's</h1>
+        </section>
+        <aside class="hours">
+            <h3>Hours</h3>
+            <p>Mon-Wed 6-11</p>
+            <p>Thu-Sat 4-12</p>
+            <p>Sun 3-10</p>
+            <a href="./book.html">Make a reservation</a>
+        </aside>
+    </footer>
 </body>
 </html>

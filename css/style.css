@@ -1,12 +1,53 @@
 @import "./fonts.css";
 
+/* Set keyframes */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    margin: 0;
+}
+
 /* Home Page */
 
 .home-page {
-    background-color: black;
     background-image: url('https://images.unsplash.com/photo-1571866735550-7b1ae3bdb144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
     background-repeat: no-repeat;
     background-size: cover;
+    animation: fadeIn 1s;
+    transition: 0.35s ease;
+}
+
+.home-page-eat {
+    background-image: url('https://images.unsplash.com/photo-1541921671-aef0a20d0787?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2286&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.35s ease;
+}
+
+.home-page-drink {
+    background-image: url('https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.35s ease;
+}
+
+.home-page-visit {
+    background-image: url('https://cdn.pixabay.com/photo/2022/08/13/00/14/restaurant-7382688_1280.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: 0.35s ease;
 }
 
 header {
@@ -20,6 +61,7 @@ nav ul {
 }
 
 nav ul a {
+    position: relative;
     margin: 0 15px;
     font-size: 23px;
     color: rgb(212, 212, 212);
@@ -38,6 +80,7 @@ a {
 
 li {
     list-style: none;
+    position: relative;
 }
 
 .home-banner {
@@ -70,12 +113,31 @@ li {
     margin-top: 10%;
 }
 
-/* Menu */
+li ::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    z-index: -1;
+    background-color: #E5E7eb;
+    transition: 300ms ease-in-out;
+    transform-origin: bottom;
+    transform: scaleX(0);
+}
+
+li a:hover::before {
+    transform: scaleX(1);
+}
+
+/* -----------------------------------Menu----------------------------------- */
 
 .menu-page {
-    background-color: rgb(71, 71, 71);
+    background-color: white;
     font-family: 'Cinzel';
-
+    animation: fadeIn 1s;
+    color: rgb(56, 56, 56);
 }
 
 .menu-main {
@@ -84,10 +146,39 @@ li {
     align-items: center;
 }
 
+.menu-main h2 {
+    font-size: 40px;
+    font-family: 'CinzelBold';
+}
+
+.menu-main h2::before {
+    content: 'K';
+    font-family: 'Nymph';
+    padding-right: 20px;
+    color: rgb(204, 162, 85);
+}
+
+.menu-main h2::after {
+    content: 'L';
+    font-family: 'Nymph';
+    padding-left: 20px;
+    color: rgb(204, 162, 85);
+    ;
+}
+
+#menu-header a,
+#menu-id {
+    color: rgb(56, 56, 56);
+}
+
+summary h3 {
+    font-family: 'Cinzel';
+    font-weight: 500;
+}
+
 .starters,
 .dessert {
     background-color: white;
-    border: double black 5px;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -101,6 +192,7 @@ figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: 1s ease;
 }
 
 details summary {
@@ -111,8 +203,8 @@ details summary {
 }
 
 details img {
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     object-fit: cover;
     margin-bottom: 10px;
 }
@@ -137,7 +229,6 @@ summary h3::after {
 
 .mains {
     background-color: white;
-    border: double black 5px;
     width: 60%;
     padding-bottom: 40px;
     margin-bottom: 60px;
@@ -156,14 +247,46 @@ summary h3::after {
 
 /* Story */
 .story-body {
-    margin: 0;
+    animation: fadeIn 1s;
 }
+
+.story-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#story-logo {
+    font-size: 2em;
+}
+
+@keyframes MoveUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+}
+
+
+#arrow {
+    font-family: 'Arrow';
+    color: rgb(212, 212, 212);
+    font-size: 140px;
+    margin-top: 120px;
+    animation: MoveUpDown 2s linear infinite;
+}
+
 
 .story-banner {
     background-image: url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
     object-fit: cover;
     height: 100vh;
-    padding: 0;
 }
 
 .story-banner h2 {
@@ -171,13 +294,15 @@ summary h3::after {
     color: rgb(212, 212, 212);
     font-size: 80px;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 10%;
+    margin-bottom: 10px;
+
 }
 
 .story-details {
     display: flex;
     justify-content: space-evenly;
-    padding: 10% 10%;
+    padding: 5% 10%;
     font-family: 'Cinzel';
 }
 
@@ -218,4 +343,66 @@ summary h3::after {
 .staff {
     align-self: flex-start;
     margin-top: 5%;
+}
+
+.cta {
+    font-family: 'Cinzel';
+    font-size: 20px;
+    margin-bottom: 70%;
+    background-color: transparent;
+    padding: 15px 10px;
+    cursor: pointer;
+    border: 1px solid rgb(204, 162, 85);
+}
+
+.cta:hover {
+    background-color: rgb(204, 162, 85);
+    color: white;
+    transition: 0.25s;
+}
+
+/* Scroll animation */
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(-150px);
+}
+
+.show {
+    opacity: 1;
+    transition: all 1s;
+    transform: translateY(150px);
+}
+
+/* Footer */
+
+footer {
+    font-family: 'Cinzel';
+    display: flex;
+    justify-content: space-around;
+    border-top: solid rgb(184, 184, 184) 1px;
+    border-width: 60%;
+    margin-top: 10%;
+}
+
+.contact,
+.hours,
+.contact p,
+.hours p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+}
+
+#footer-logo h1 {
+    color: rgb(36, 36, 36);
+    font-size: 40px;
+}
+
+footer aside,
+footer section {
+    padding-top: 5%;
+    padding-bottom: 5%
 }

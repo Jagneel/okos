@@ -46,3 +46,17 @@
     font-weight: 400;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Arrow';
+    src: url('../assets/fonts/PeaxWebdesignarrows.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nymph';
+    src: url('../assets/fonts/Nymphette.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
