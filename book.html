@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./scripts/book.js"></script>
 </head>
-<body>
+<body class="booking-page">
     <header>
         <a href="index.html"><h1 class="logo">Oko's</h1></a>
         <nav class="nav">
@@ -18,5 +20,33 @@
             </ul>
         </nav>
     </header>
+    <main>
+        <section class="booking-banner">
+            <h2>Book your table now</h2>
+            <artile class="booking-container">
+                <!-- <figure class="form-image">
+                </figure> -->
+                <h2>Reservation</h2>
+                <form id="myForm">
+                    <input type="date" id="date" name="date"
+                        value="" required>
+                    <select name="hour" id="hour"></select>
+                    <select name="minute" id="minute"></select>
+                    <input type="text" id="fname" placeholder="Name" required>
+                    <input type="number" id="phone" placeholder="Phone" required>
+                    <input type="number" id="num-people" min="1" max="16" placeholder="How many persons?" required>
+                    <button id="book-table" class="cta" type="submit" >Book Table</button>
+                </form>
+                <!-- Booking Modal -->
+                <div id='myModal' class="modal">
+                <!-- Modal content -->
+                    <div id="modalC" class="modal-content">
+                        <span class="close"></span>
+                        <p>Thank you for your reservation, we will see you soon!</p>
+                    </div>
+                </div>
+            </artile>
+        </section>
+    </main>
 </body>
 </html>
