@@ -133,14 +133,16 @@ li a:hover::before {
 
 /* -----------------------------------Menu----------------------------------- */
 
-.menu-page {
+.menu-page,
+.drinks-page {
     background-color: white;
     font-family: 'Cinzel';
     animation: fadeIn 1s;
     color: rgb(56, 56, 56);
 }
 
-.menu-main {
+.menu-main,
+.drinks-main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -151,14 +153,16 @@ li a:hover::before {
     font-family: 'CinzelBold';
 }
 
-.menu-main h2::before {
+.menu-main h2::before,
+.drink-type::before {
     content: 'K';
     font-family: 'Nymph';
     padding-right: 20px;
     color: rgb(204, 162, 85);
 }
 
-.menu-main h2::after {
+.menu-main h2::after,
+.drink-type::after {
     content: 'L';
     font-family: 'Nymph';
     padding-left: 20px;
@@ -319,6 +323,29 @@ summary h3::after {
 
 .mains-menu figure p {
     width: 25em;
+}
+
+.cocktails,
+.wine,
+.beer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.wine,
+.beer {
+    padding: 50px 150px 200px 150px;
+}
+
+.wine-beer {
+    display: flex;
+    flex-direction: row;
+}
+
+.drink-type {
+    font-size: 40px;
 }
 
 /* -----------------------------------Story----------------------------------- */
