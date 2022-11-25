@@ -18,10 +18,32 @@ body {
 
 /* Home Page */
 
+.hamburger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: rgb(212, 212, 212);
+}
+
 .home-page {
     background-image: url('https://images.unsplash.com/photo-1571866735550-7b1ae3bdb144?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     animation: fadeIn 1s;
     transition: 0.35s ease;
 }
@@ -29,6 +51,7 @@ body {
 .home-page-eat {
     background-image: url('https://images.unsplash.com/photo-1541921671-aef0a20d0787?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2286&q=80');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     transition: 0.35s ease;
@@ -37,6 +60,7 @@ body {
 .home-page-drink {
     background-image: url('https://images.unsplash.com/photo-1514361892635-6b07e31e75f9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     transition: 0.35s ease;
@@ -45,6 +69,7 @@ body {
 .home-page-visit {
     background-image: url('https://cdn.pixabay.com/photo/2022/08/13/00/14/restaurant-7382688_1280.jpg');
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position: center;
     transition: 0.35s ease;
@@ -97,7 +122,7 @@ li {
 
 .home-banner ul a {
     font-family: 'Bricks';
-    font-size: 90px;
+    font-size: 5em;
     color: rgb(212, 212, 212);
     margin: 0 50px;
 }
@@ -129,6 +154,62 @@ li ::before {
 
 li a:hover::before {
     transform: scaleX(1);
+}
+
+@media (max-width: 1210px) {
+    .home-banner ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-banner p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        color: white;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(56, 56, 56);
+        width: 100%;
+        border-radius: 0 10px 10px 0;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 }
 
 /* -----------------------------------Menu----------------------------------- */
@@ -285,33 +366,6 @@ summary h3::after {
     max-width: 215px;
 }
 
-
-@media (max-width: 1010px) {
-    .mains-menu {
-        flex-direction: column;
-        justify-content: center;
-        width: 40%;
-    }
-
-    .mains-menu aside {
-        margin-bottom: 2em;
-
-    }
-
-    .mains-menu aside::after {
-        content: '';
-        height: 100px;
-    }
-
-    .mains-menu aside::after {
-        content: 'o p';
-        flex-wrap: nowrap;
-        font-family: 'Nymph';
-        color: rgb(204, 162, 85);
-        font-size: 50px;
-    }
-}
-
 .mains-menu details {
     position: relative;
 }
@@ -346,6 +400,52 @@ summary h3::after {
 
 .drink-type {
     font-size: 40px;
+}
+
+@media (max-width: 1010px) {
+    .mains-menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mains-menu aside {
+        margin-bottom: 2em;
+
+    }
+
+    .mains-menu aside::after {
+        content: '';
+        height: 100px;
+    }
+
+    .mains-menu aside::after {
+        content: 'o p';
+        flex-wrap: nowrap;
+        font-family: 'Nymph';
+        color: rgb(204, 162, 85);
+        font-size: 50px;
+    }
+
+    .wine-beer {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .wine {
+        padding-bottom: 0px;
+    }
+
+    .beer {
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    ul li a {
+        color: white !important;
+    }
 }
 
 /* -----------------------------------Story----------------------------------- */
@@ -390,6 +490,7 @@ summary h3::after {
 .story-banner {
     background-image: url('https://images.unsplash.com/photo-1576237680582-75be01432ca6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80');
     object-fit: cover;
+    background-attachment: fixed;
     height: 100vh;
 }
 
@@ -479,10 +580,30 @@ summary h3::after {
     transform: translateY(150px);
 }
 
+@media (max-width: 1000px) {
+    .story-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+    }
+
+    .staff,
+    .press {
+        display: none !important;
+    }
+
+    .story-details article {
+        width: 80%;
+    }
+}
+
 /* -----------------------------------Booking----------------------------------- */
 .booking-page {
     background-image: url('https://images.unsplash.com/photo-1570560258879-af7f8e1447ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80');
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
 }
 
@@ -539,11 +660,6 @@ input,
     text-align: center;
     padding-bottom: 40px;
     margin-bottom: 20px;
-}
-
-.form-image {
-    background-image: url('https://images.unsplash.com/photo-1616240580835-85fec1c8188b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2651&q=80');
-    background-size: cover;
 }
 
 /* The Modal (background) */
@@ -631,4 +747,12 @@ footer aside,
 footer section {
     padding-top: 5%;
     padding-bottom: 5%
+}
+
+@media (max-width: 700px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
